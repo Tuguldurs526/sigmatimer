@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sigma Timer</h1>
+        
+        <div class="timer">
+            <p id="timer-display">25:00</p>
+            <button id="start-btn">Start</button>
+            <button id="stop-btn" disabled>Stop</button>
+            <div class="timer-settings">
+                <label for="work-time">Work Time (min):</label>
+                <input type="number" id="work-time" value="25" min="1">
+                <label for="break-time">Break Time (min):</label>
+                <input type="number" id="break-time" value="5" min="1">
+            </div>
+        </div>
+
+        <div class="user-progress">
+            <h2>Progress</h2>
+            <p>Sessions Completed: <span id="session-count">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
