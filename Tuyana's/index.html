@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>SIGMA Timer</title>
+</head>
+<body>
+  <div class="container">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <header>
+      <h1>SIGMA</h1>
+    </header>
+
+    <div class="form-container" id="register-form">
+      <h2>Welcome!</h2>
+      <input type="text" id="first-name" placeholder="First Name" required />
+      <input type="text" id="last-name" placeholder="Last Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button onclick="registerUser()" class="register-btn">Register</button>
+      <p class="login-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Login here</a></p>
+    </div>
+
+    <div class="form-container1" id="login-form" style="display: none;">
+      <h2>Login</h2>
+      <input type="text" id="login-name" placeholder="Enter Name" required />
+      <input type="password" id="login-password" placeholder="Enter Password" required />
+      <button onclick="loginUser()" class="login-btn">Login</button>
+    </div>
+    
+    <main id="timer-container" style="display: none;">
+      <h2>SHORT BREAK TIMER:</h2>
+      <div class="timer">01:53</div>
+      <div class="buttons">
+        <button class="focus">FOCUS</button>
+        <button class="short-break active">Short break</button>
+        <button class="long-break">Long break</button>
+        <button class="pause">PAUSE</button>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
