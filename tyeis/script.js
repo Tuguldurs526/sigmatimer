@@ -1,87 +1,172 @@
-let timerInterval;
-let remainingTime = 0;
-
-function showRegisterForm() {
-  document.getElementById('register-form').style.display = 'flex';
-  document.getElementById('login-form').style.display = 'none';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-function showLoginForm() {
-  document.getElementById('login-form').style.display = 'flex';
-  document.getElementById('register-form').style.display = 'none';
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8c7dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-function togglePassword(inputId, icon) {
-  const passwordInput = document.getElementById(inputId);
-  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-  icon.textContent = passwordInput.type === "password" ? "👁️" : "🙈";
+.container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 
-function registerUser() {
-  const firstName = document.getElementById('first-name').value;
-  const lastName = document.getElementById('last-name').value;
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 110%;
+  background: #a0c9f0;
+  clip-path: polygon(0% 50%, 25% 55%, 50% 50%, 75% 55%, 100% 50%, 100% 100%, 0% 100%);
+  animation: wave-animation 5s infinite linear;
+  z-index: -1;
+}
 
-  if (password.length < 6) {
-    alert('Password must be at least 6 characters long.');
-    return;
+.wave:nth-child(2) {
+  animation-delay: -2.5s;
+  opacity: 0.7;
+}
+
+@keyframes wave-animation {
+  0% {
+      transform: translateX(0%);
   }
-
-  localStorage.setItem('userData', JSON.stringify({ firstName, lastName, email, password }));
-
-  alert('Registration successful! Please log in.');
-  showLoginForm();
-}
-
-function loginUser() {
-  const enteredName = document.getElementById('login-name').value;
-  const enteredPassword = document.getElementById('login-password').value;
-
-  const storedUser = JSON.parse(localStorage.getItem('userData'));
-
-  if (storedUser && storedUser.firstName === enteredName && storedUser.password === enteredPassword) {
-    alert('Login successful!');
-    document.getElementById('timer-container').style.display = 'block';
-    document.getElementById('login-form').style.display = 'none';
-  } else {
-    alert('Invalid credentials, please try again.');
+  100% {
+      transform: translateX(-50%);
   }
 }
 
-function setTimer(minutes) {
-  clearInterval(timerInterval);
-  remainingTime = minutes * 60;
-  updateTimerDisplay();
-
-  timerInterval = setInterval(() => {
-    if (remainingTime > 0) {
-      remainingTime--;
-      updateTimerDisplay();
-    } else {
-      clearInterval(timerInterval);
-      alert("Time's up!");
-    }
-  }, 1000);
+header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 2;
 }
 
-function pauseTimer() {
-  clearInterval(timerInterval);
+header::after {
+  content: "≡";
+  font-size: 35px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ff0099;
+  z-index: 2;
+  cursor: pointer;
 }
 
-function updateTimerDisplay() {
-  const minutes = Math.floor(remainingTime / 60);
-  const seconds = remainingTime % 60;
-  document.getElementById('timer').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+main {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll("button");
+main h2 {
+  font-size: 25px;
+  color: gray;
+  margin: 200px 0 120px 0;
+}
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      buttons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-    });
-  });
-});
+.timer {
+  font-size: 100px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+button {
+  font-size: 17px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #f8c7dc; 
+  color: gray;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.active {
+  background-color: white; 
+  color: black; 
+}
+
+button.pause {
+  background-color: #ff0099;
+  color: white;
+}
+
+button.pause.active {
+  background-color: white; 
+  color: #ff0099; 
+}
+
+.form-container,
+.form-container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 250px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-container1 {
+  margin-top: 320px;
+}
+
+.form-container input,
+.form-container1 input {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-container button,
+.form-container1 button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #ff0099;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px; 
+}
+
+.form-container button:hover,
+.form-container1 button:hover {
+  background-color: #ff66b2;
+}
+
+.login-link {
+  margin-top: 25px;
+  text-align: center;
+}
