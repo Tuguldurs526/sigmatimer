@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIGMA Registration & Login</title>
   <link rel="stylesheet" href="styles.css">
+  <title>SIGMA Registration & Timer</title>
 </head>
 <body>
   <div class="container">
-    <!-- Moving Waves -->
     <div class="wave"></div>
     <div class="wave"></div>
+    <header>
+      <h1>SIGMA</h1>
+    </header>
 
     <!-- Registration Form -->
     <div class="form-container" id="register-form">
@@ -19,25 +21,38 @@
       <input type="text" id="last-name" placeholder="Last Name" required />
       <input type="email" id="email" placeholder="Email" required />
       <div class="input-container">
-        <input type="password" id="password" placeholder="Password" required oninput="validatePassword()"/>
+        <input type="password" id="password" placeholder="Password" required />
         <span class="show-password" onclick="togglePassword('password', this)">👁️</span>
       </div>
-      <p class="password-notice">Password must have 8 characters and at least 1 number.</p>
-      <p id="password-check" class="password-valid hidden">✔️ Password is valid</p>
-      <button onclick="registerUser()">Register</button>
+      <p class="password-requirements">Password must be at least 6 characters long.</p>
+      <button onclick="registerUser()" class="register-btn">Register</button>
+      <p class="login-link">Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Login here</a></p>
     </div>
 
     <!-- Login Form -->
-    <div class="form-container hidden" id="login-form">
+    <div class="form-container1" id="login-form" style="display: none;">
       <h2>Login</h2>
-      <input type="text" id="login-name" placeholder="First Name" required />
       <div class="input-container">
-        <input type="password" id="login-password" placeholder="Password" required />
+        <input type="text" id="login-name" placeholder="Enter Name" required />
+        <input type="password" id="login-password" placeholder="Enter Password" required />
         <span class="show-password" onclick="togglePassword('login-password', this)">👁️</span>
       </div>
-      <button onclick="loginUser()">Login</button>
+      <button onclick="loginUser()" class="login-btn">Login</button>
     </div>
+
+    <!-- Timer Section -->
+    <main id="timer-container" style="display: none;">
+      <h2>SHORT BREAK TIMER:</h2>
+      <div class="timer" id="timer">25:00</div>
+      <div class="buttons">
+        <button class="focus" onclick="setTimer(25)">FOCUS</button>
+        <button class="short-break active" onclick="setTimer(5)">Short break</button>
+        <button class="long-break" onclick="setTimer(15)">Long break</button>
+        <button class="pause" onclick="pauseTimer()">PAUSE</button>
+      </div>
+    </main>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
