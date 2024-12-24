@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGMA Registration & Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Moving Waves -->
+    <div class="wave"></div>
+    <div class="wave"></div>
+
+    <!-- Registration Form -->
+    <div class="form-container" id="register-form">
+      <h2>Welcome!</h2>
+      <input type="text" id="first-name" placeholder="First Name" required />
+      <input type="text" id="last-name" placeholder="Last Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <div class="input-container">
+        <input type="password" id="password" placeholder="Password" required oninput="validatePassword()"/>
+        <span class="show-password" onclick="togglePassword('password', this)">👁️</span>
+      </div>
+      <p class="password-notice">Password must have 8 characters and at least 1 number.</p>
+      <p id="password-check" class="password-valid hidden">✔️ Password is valid</p>
+      <button onclick="registerUser()">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container hidden" id="login-form">
+      <h2>Login</h2>
+      <input type="text" id="login-name" placeholder="First Name" required />
+      <div class="input-container">
+        <input type="password" id="login-password" placeholder="Password" required />
+        <span class="show-password" onclick="togglePassword('login-password', this)">👁️</span>
+      </div>
+      <button onclick="loginUser()">Login</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
