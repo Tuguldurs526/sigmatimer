@@ -1,0 +1,20 @@
+/* Simple CSS to ensure we can see content clearly. */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  margin-top: 50px;
+}

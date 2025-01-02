@@ -1,0 +1,19 @@
+{
+  "name": "sigmatimer",
+  "version": "1.0.0",
+  "description": "A combined Pomodoro timer for web, desktop, and mobile.",
+  "scripts": {
+    "start": "concurrently \"yarn backend\" \"yarn frontend\" \"yarn electron\"",
+    "backend": "cd backend && npm start",
+    "frontend": "cd new-frontend && yarn start",
+    "electron": "cd app && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

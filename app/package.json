@@ -1,0 +1,19 @@
+{
+  "name": "sigmatimer-electron",
+  "version": "1.0.0",
+  "description": "An Electron-based desktop version of the Sigma Timer app.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging",
+    "build": "electron-packager . SigmaTimer --platform=win32 --arch=x64 --out=build --overwrite"
+  },
+  "dependencies": {
+    "electron": "^25.0.0",
+    "electron-is-dev": "^3.0.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.1"
+  }
+}
