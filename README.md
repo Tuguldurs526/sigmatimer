@@ -1,66 +1,66 @@
-# **SIGMA Timer**
+# SigmaTimer
 
-SIGMA Timer is a productivity web application based on the Pomodoro Technique. It helps users manage their time effectively by dividing work sessions into intervals, separated by short and long breaks. Users can track their sessions, view their progress, and compete with others on a global leaderboard.
+## Introduction
+SigmaTimer is a combined Pomodoro timer application designed for web, desktop, and mobile platforms. It provides a seamless experience to manage your work and break intervals using the Pomodoro technique. This application supports synchronization across devices, ensuring you can maintain your workflow no matter where you are.
 
-## **Features**
+## Features
+- Web, desktop, and mobile support
+- Synchronization between devices
+- Customizable work and rest durations
+- Real-time dashboard for session tracking
+- Simple and user-friendly interface
 
-- **Pomodoro Timer**: A customizable timer for work and rest sessions.
-- **User Progress Tracking**: Tracks Pomodoro sessions, focus time, and rest time for each user.
-- **Global Leaderboard**: Displays a leaderboard where users can compare their progress with others.
-- **Responsive Design**: Works seamlessly on desktop and mobile devices.
-- **Beautiful UI**: Includes animated waves and a user-friendly interface.
+## Installation
 
----
+### Prerequisites
+- Node.js and npm installed on your system
 
-## **Technologies Used**
+### Steps
+1. Clone the repository and switch to the `tugo` branch:
+   ```bash
+   git clone https://github.com/Tuguldurs526/sigmatimer.git
+   cd sigmatimer
+   git checkout tugo
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+   This will automatically install dependencies for the backend, frontend, and desktop app.
 
-- **Frontend**: React.js
-- **Backend**: Node.js with Express.js
-- **Database**: MongoDB
-- **Version Control**: Git and GitHub
+3. Start the application:
+   ```bash
+   npm start
+   ```
+   This will run the backend, frontend, and Electron app concurrently.
 
----
+## Development
 
-## **How to Run the Project Locally**
+### Directory Structure
+- **app/**: Contains the Electron app files
+- **backend/**: Contains the backend server files
+- **frontend/**: Contains the React frontend application
 
-### **Prerequisites**
-1. **Node.js** installed on your system.
-2. **MongoDB** (local or MongoDB Atlas for remote database).
-3. **Git** installed for version control.
+### Available Scripts
+- `npm start`: Starts the backend, frontend, and Electron app concurrently.
+- `npm run install-all`: Installs dependencies for all subdirectories (backend, frontend, app).
+- `npm run build`: Builds the backend, frontend, and Electron app.
+- `npm run clean`: Cleans all node_modules folders.
 
----
+## Deployment
 
-### **Steps to Run**
+To deploy the application locally:
+1. Ensure all dependencies are installed:
+   ```bash
+   npm run install-all
+   ```
+2. Build the application:
+   ```bash
+   npm run build
+   ```
 
-1. **Clone the Repository**
-git clone https://github.com/Tuguldurs526/sigmatimer.git cd sigmatimer
+## Contributing
+If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
 
-2. **Install Dependencies**
-npm install
-cd backend  then npm install
-cd frontend then npm install --global yarn
-
-4. **Set Up the Environment**
-Create a `.env` file in the root directory and add the following:
-# Application Port
-PORT=5000
-# MongoDB URI (Local Database)
-DB_URI=mongodb://127.0.0.1:27017/sigma-timer
-USE_MEMORY_DB=true
-
-
-4. **Run the Backend Server**
-npm run server or npm start (in the backend directory)
-
-
-5. **Run the Frontend Application**
-Open a new terminal and run:
-yarn install
-
-6. **Access the Application**
-Open your browser and navigate to:
-http://localhost:3000
-
-## **License**
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+## License
+This project is licensed under the MIT License.

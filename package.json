@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A combined Pomodoro timer for web, desktop, and mobile.",
   "scripts": {
-    "start": "npm run install-all && concurrently \"npm run backend\" \"npm run frontend\" \"npm run electron\"",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\" \"npm run electron\"",
     "install-all": "npm run install-backend && npm run install-frontend && npm run install-electron",
     "backend": "cd backend && npm start",
     "frontend": "cd frontend && npm start",
@@ -15,7 +15,9 @@
     "install-backend": "cd backend && npm install",
     "install-frontend": "cd frontend && npm install",
     "install-electron": "cd app && npm install",
-    "clean": "rm -rf backend/node_modules frontend/node_modules app/node_modules"
+    "clean": "rm -rf backend/node_modules frontend/node_modules app/node_modules",
+    "postinstall": "npm run install-all",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
