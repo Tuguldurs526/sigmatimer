@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sigma Timer</string>
+    <string name="title_text">Welcome to Sigma Timer</string>
+    <string name="start_button">Start Timer</string>
+    <string name="work_hint">Work (minutes)</string>
+    <string name="rest_hint">Rest (minutes)</string>
+    <string name="enter_username">Enter your username</string>
+</resources>

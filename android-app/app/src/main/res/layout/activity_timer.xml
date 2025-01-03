@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGMA TIMER"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="200dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/workTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Work Time"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/timerView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:gravity="center"
+            android:background="@drawable/circular_timer"
+            android:text="25:00"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                android:backgroundTint="@color/pink1"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:backgroundTint="@color/pink1"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/workTimeInput"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:hint="@string/work_hint"
+                android:inputType="number"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_edittext"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/restTimeInput"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:hint="@string/rest_hint"
+                android:inputType="number"
+                android:background="@drawable/rounded_edittext"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/dashboardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Dashboard"
+            android:backgroundTint="@color/pink1"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

@@ -6,7 +6,7 @@ frontend/node_modules/
 *.log
 
 # Android-specific ignores
-android/.gradle/
-android/.idea/
-android/build/
-android/app/build/ 
+android-app/.gradle/
+android-app/.idea/
+android-app/build/
+android-app/app/build/ 
